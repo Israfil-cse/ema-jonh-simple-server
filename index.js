@@ -45,6 +45,7 @@ client.connect(err => {
 })
 
 
+
 app.get('/Product/:key', (req, res) => {
     ProductsCollection.find({key: req.params.key})
   .toArray((err, documents) => {
@@ -71,7 +72,12 @@ app.post('/addOrder', (req, res) => {
   })
 })
 
-
+app.get('check', (req, res) => {
+  OrdersCollection.find({})
+.toArray((err, documents) => {
+    res.send(documents)
+})
+})
 
 });
 
