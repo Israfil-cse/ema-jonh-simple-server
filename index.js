@@ -75,6 +75,4 @@ app.post('/addOrder', (req, res) => {
 
 });
 
-app.listen(port, () => {
-  console.log(`successfully listening at http://localhost:${port}`)
-})
+app.listen(process.env.PORT || port)
